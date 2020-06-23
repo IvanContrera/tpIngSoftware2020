@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.scrumteam.tictactoe.R;
 
-    private
+
 
 public class ConfigNuevoJuegoActivity extends AppCompatActivity {
 
