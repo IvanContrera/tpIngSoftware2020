@@ -16,11 +16,16 @@ public class InicioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
     }
 
-    /*Este metodo debe borrarse - solo sirve para que el que diseñe la sig pantalla
-    * pueda pasar*/
-    public void siguiente(View v)
+
+    public void nuevoJuego(View v)
     {
         Intent i = new Intent(this,ConfigNuevoJuegoActivity.class);
+        startActivity(i);
+    }
+
+    public void lanzarAcercaDe(View v)
+    {
+        Intent i = new Intent(this,AcercaDeActivity.class);
         startActivity(i);
     }
 }

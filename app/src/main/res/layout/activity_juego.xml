@@ -6,17 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".activities.JuegoActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.scrumteam.tictactoe.cviews.PanelPuntuacionesView
+        android:id="@+id/panel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="359dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginBottom="353dp"
-        android:text="pantalla 3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.scrumteam.tictactoe.cviews.TurneroView
+        android:id="@+id/turnero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/panel" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/tablero_layout"
+        android:layout_width="0dp"
+        android:layout_height="395dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.577" />
+
+    <Button
+        android:id="@+id/btnNuevaPartida"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_nueva_partida"
+        android:onClick="clickNuevaPartida"
+        android:text="NUEVA PARTIDA"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnTerminarJuego"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <Button
+        android:id="@+id/btnTerminarJuego"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_terminar_juego"
+        android:onClick="clickSalir"
+        android:text="terminar juego"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNuevaPartida"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 </androidx.constraintlayout.widget.ConstraintLayout>
