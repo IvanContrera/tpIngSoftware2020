@@ -2,9 +2,12 @@ package com.scrumteam.tictactoe.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 
 public class JuegoActivity extends AppCompatActivity {
 
+    protected PowerManager.WakeLock wakelock;       //para mantener la pantalla activa
     ArrayList<ImageView> mosaicos;
     ArrayList<ImageView> lineasGanadoras;
     ConjuntoFichas conjuntoFichas;
@@ -56,9 +60,10 @@ public class JuegoActivity extends AppCompatActivity {
 
 
 
+
         //solo para prueba, despues de deberan extraer de la actividad anterior
-        dimensionElegida = 2;
-        estiloElegido = 2;
+        //dimensionElegida = 2;
+        //estiloElegido = 2;
 
         //conjuntoFichas.setEstilo(new EstiloClasico());
         //selectTablero3x3();
@@ -73,11 +78,11 @@ public class JuegoActivity extends AppCompatActivity {
         juego = new Juego();
         juego.registrarObservador(turneroView);
         juego.registrarObservador(panelPuntuacionesView);
-        elegirTablero(dimensionElegida);
-        //elegirTablero(datosRecibidos.getInt("nivelJuego"));       //descomentar cuando este completo el proyecto
-        elegirEstiloFichas(estiloElegido);
-        //elegirEstiloFichas(datosRecibidos.getInt("estiloGrafico"));
-        //juego.setNombres(datosRecibidos.getString("jugador1"),datosRecibidos.getString("jugador2"));  //descomentar cuando este completo el proyecto
+
+        elegirTablero(datosRecibidos.getInt("nivelJuego"));       //descomentar cuando este completo el proyecto
+        //elegirEstiloFichas(estiloElegido);
+        elegirEstiloFichas(datosRecibidos.getInt("estiloGrafico"));
+        juego.setNombres(datosRecibidos.getString("jugador1"),datosRecibidos.getString("jugador2"));  //descomentar cuando este completo el proyecto
         juego.nuevaPartida();
 
     }
@@ -296,5 +301,11 @@ public class JuegoActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
 
 }

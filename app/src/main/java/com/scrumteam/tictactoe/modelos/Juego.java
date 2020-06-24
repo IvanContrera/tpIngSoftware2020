@@ -73,11 +73,11 @@ public class Juego implements Sujeto
 
     public void setNombres(String jugador1, String jugador2)
     {
-        if(jugador1 != "")
+        if(!jugador1.equals(""))
         {
             nombreJugadores.set(0,jugador1);
         }
-        if(jugador2 != "")
+        if(!jugador2.equals(""))
         {
             nombreJugadores.set(1,jugador2);
         }

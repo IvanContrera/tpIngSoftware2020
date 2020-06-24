@@ -21,32 +21,56 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
-    @Test
+public class VistasPersonalizadasTest {
+    /*@Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
         assertEquals("com.scrumteam.tictactoe", appContext.getPackageName());
-    }
+    }*/
 
     Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-
-    @Test
-    public void probarPanelPuntuaciones()
-    {
-        //Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        PanelPuntuacionesView p = new PanelPuntuacionesView(appContext,null);
-
-        p.update(1,2,0,1,0,null);
-
-        assertEquals(1,p.getPuntajeJug1());
-    }
-
     /*Genero turnero y una lista con los nombres de los dos jugadores*/
     TurneroView turneroView = new TurneroView(appContext,null);
+    PanelPuntuacionesView p = new PanelPuntuacionesView(appContext,null);
     ArrayList<String> nombres = new ArrayList<>();
+
+
+    /*Asigna 6 puntos al jugador 1*/
+    @Test
+    public void updatePanelPuntuacionesPuntJ1Test()
+    {
+        //PanelPuntuacionesView p = new PanelPuntuacionesView(appContext,null);
+
+        p.update(6,0,0,1,0,null);
+
+        assertEquals(6,p.getPuntajeJug1());
+    }
+
+
+    /*Asigna 6 puntos al jugador 2*/
+    @Test
+    public void updatePanelPuntuacionesPuntJ2Test()
+    {
+        PanelPuntuacionesView p = new PanelPuntuacionesView(appContext,null);
+
+        p.update(0,6,0,1,0,null);
+
+        assertEquals(6,p.getPuntajeJug2());
+    }
+
+    /*Asigna 6 puntos a Empates*/
+    @Test
+    public void updatePanelPuntuacionesPuntEmpTest()
+    {
+        PanelPuntuacionesView p = new PanelPuntuacionesView(appContext,null);
+
+        p.update(0,6,0,1,0,null);
+
+        assertEquals(6,p.getPuntajeJug2());
+    }
+
 
     @Test
     public void getMensajeGanadorJ1TurneroTest()
@@ -54,7 +78,7 @@ public class ExampleInstrumentedTest {
         nombres.add("Ivan");
         nombres.add("Milagros");
         turneroView.update(0,0,0,-1,-1,nombres);
-        turneroView.update(0,0,0,-1,1,null);
+        turneroView.update(0,0,0,0,1,nombres);
 
         assertEquals("Ganador: Ivan",turneroView.getMensaje());
     }
@@ -66,7 +90,7 @@ public class ExampleInstrumentedTest {
         nombres.add("Ivan");
         nombres.add("Milagros");
         turneroView.update(0,0,0,-1,-1,nombres);
-        turneroView.update(0,0,0,2,2,null);
+        turneroView.update(0,0,0,0,2,null);
 
         assertEquals("Ganador: Milagros",turneroView.getMensaje());
     }
@@ -78,7 +102,7 @@ public class ExampleInstrumentedTest {
         nombres.add("Ivan");
         nombres.add("Milagros");
         turneroView.update(0,0,0,-1,-1,nombres);
-        turneroView.update(0,0,0,-1,3,null);
+        turneroView.update(0,0,0,0,3,null);
 
         assertEquals("Empataron!!!",turneroView.getMensaje());
     }

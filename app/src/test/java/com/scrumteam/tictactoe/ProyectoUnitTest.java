@@ -115,7 +115,7 @@ public class ProyectoUnitTest
     /*Se compruba con algunas jugadas que no hay linea horizontal
     * ganadora*/
     @Test
-    public void checkJugadaHorizontalFalse()
+    public void checkJugadaHorizontalFalseTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,1); //Primera jugada J1
@@ -129,7 +129,7 @@ public class ProyectoUnitTest
     /*Se compruba con algunas jugadas que sí hay linea horizontal
      * ganadora*/
     @Test
-    public void checkJugadaHorizontalTrue()
+    public void checkJugadaHorizontalTrueTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
@@ -143,7 +143,7 @@ public class ProyectoUnitTest
 
     /*Serie de jugadas que no conducen a una jugada ganadora vertical*/
     @Test
-    public void checkJugadaVerticalFalse()
+    public void checkJugadaVerticalFalseTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
@@ -156,7 +156,7 @@ public class ProyectoUnitTest
 
     /*Serie de jugadas que sí conducen a una jugada ganadora vertical*/
     @Test
-    public void checkJugadaVerticalTrue()
+    public void checkJugadaVerticalTrueTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
@@ -171,7 +171,7 @@ public class ProyectoUnitTest
     /*Con una series de jugadas, se comprueba que no haya jugada
     * ganadora en la diagonal principal*/
     @Test
-    public void checkJugadaDiagPrincipalFalse()
+    public void checkJugadaDiagPrincipalFalseTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
@@ -186,7 +186,7 @@ public class ProyectoUnitTest
     /*Con una series de jugadas, se comprueba que sí haya jugada
      * ganadora en la diagonal principal*/
     @Test
-    public void checkJugadaDiagPrincipalTrue()
+    public void checkJugadaDiagPrincipalTrueTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
@@ -200,7 +200,7 @@ public class ProyectoUnitTest
     /*Con una series de jugadas, se comprueba que no haya jugada
      * ganadora en la diagonal invertida*/
     @Test
-    public void checkJugadaDiagInvertidaFalse()
+    public void checkJugadaDiagInvertidaFalseTest()
     {
         juego.nuevaPartida();
         juego.hacerJugada(0,0); //Primera jugada J1
