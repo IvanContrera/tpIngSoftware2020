@@ -9,6 +9,7 @@ import android.os.PowerManager;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -217,6 +218,9 @@ public class JuegoActivity extends AppCompatActivity {
         {
             btnTerminarJuego.setVisibility(View.VISIBLE);
             btnNuevaPartida.setVisibility(View.VISIBLE);
+            Animation aparecer_btnJugar = AnimationUtils.loadAnimation(this,R.anim.aparecer_boton1);
+            btnTerminarJuego.startAnimation(aparecer_btnJugar);
+            btnNuevaPartida.startAnimation(aparecer_btnJugar);
         }
 
     }

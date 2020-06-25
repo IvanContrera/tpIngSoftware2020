@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0E7E0"
     tools:context=".activities.JuegoActivity">
 
     <com.scrumteam.tictactoe.cviews.PanelPuntuacionesView
@@ -47,6 +48,7 @@
         android:onClick="clickNuevaPartida"
         android:text="NUEVA PARTIDA"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnTerminarJuego"
         app:layout_constraintHorizontal_bias="0.5"
@@ -61,6 +63,7 @@
         android:onClick="clickSalir"
         android:text="terminar juego"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

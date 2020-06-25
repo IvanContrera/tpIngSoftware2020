@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0E7E0"
     tools:context=".activities.ConfigNuevoJuegoActivity">
 
     <TextView
         android:id="@+id/txtTituloNuevoJuego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/changa_one"
         android:text="Nuevo juego"
-        android:textSize="24sp"
+        android:textColor="#0F5D99"
+        android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/txtJugador1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -28,6 +31,8 @@
         android:hint="Jugador 1"
         android:inputType="textPersonName"
         android:maxLength="10"
+        android:textColorHighlight="#7A3D01"
+        android:textColorHint="#4D4848"
         app:layout_constraintBottom_toTopOf="@+id/txtJugador2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,6 +47,8 @@
         android:hint="Jugador 2"
         android:inputType="textPersonName"
         android:maxLength="10"
+        android:textColorHighlight="#7A3D01"
+        android:textColorHint="#4D4848"
         app:layout_constraintBottom_toTopOf="@+id/iniciar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,8 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="44dp"
+        android:fontFamily="@font/changa_one"
         android:text="Estilo de fichas"
-        android:textSize="18sp"
+        android:textColor="#0F5D99"
+        android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtJugador2"
@@ -87,14 +96,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tablero 3x3" />
+                android:text="Tablero 3x3"
+                android:textColor="#000000"
+                android:textColorHighlight="#5E1E754B"
+                android:textColorHint="#00000000" />
 
             <RadioButton
                 android:id="@+id/nivel4x4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Tablero 4x4" />
+                android:text="Tablero 4x4"
+                android:textColor="#000000"
+                android:textColorHighlight="#5E1E754B"
+                android:textColorHint="#000000" />
         </RadioGroup>
 
         <RadioGroup
@@ -109,14 +124,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Clasico         " />
+                android:text="Clasico         "
+                android:textColor="#000000"
+                android:textColorHighlight="#5E1E754B"
+                android:textColorHint="#000000" />
 
             <RadioButton
                 android:id="@+id/estiloGeometrico"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Geometrico" />
+                android:text="Geometrico"
+                android:textColor="#000000"
+                android:textColorHighlight="#5E1E754B"
+                android:textColorHint="#000000" />
         </RadioGroup>
 
     </LinearLayout>
@@ -126,8 +147,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/changa_one"
         android:text="Nivel de juego"
-        android:textSize="18sp"
+        android:textColor="#0F5D99"
+        android:textSize="21sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.402"
@@ -144,6 +167,7 @@
         android:onClick="iniciarJuego"
         android:text="Iniciar Juego"
         android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -7,9 +7,11 @@
         android:id="@+id/txtInformacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E5D1F3"
+        android:fontFamily="@font/black_ops_one"
         android:gravity="center"
         android:text="Turnero"
-        android:textColor="#000000"
+        android:textColor="#880385"
         android:textSize="24sp"
         android:textStyle="bold" />
 </LinearLayout>
