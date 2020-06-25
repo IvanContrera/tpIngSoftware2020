@@ -6,6 +6,10 @@ env:
     - ANDROID_API_LEVEL=29
     - ANDROID_BUILD_TOOLS_VERSION=28.0.3
 android:
+  licenses:
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
   components:
     - tools
       - platform-tools
@@ -18,14 +22,10 @@ android:
       - extra-google-m2repository
       - extra-android-m2repository
       - addon-google_apis-google-$ANDROID_API_LEVEL
-licenses:
-  - 'android-sdk-preview-license-.+'
-  - 'android-sdk-license-.+'
-  - 'google-gdk-license-.+'
 before_script:
   - mkdir -p "$ANDROID_HOME/licenses"
   - cp ./google-licenses/* "$ANDROID_HOME/licenses/"
 script:
   #- ./gradlew build --stacktrace
-  #- ./gradlew build connectedCheck
+  - ./gradlew build connectedCheck
   - ./gradlew build check
