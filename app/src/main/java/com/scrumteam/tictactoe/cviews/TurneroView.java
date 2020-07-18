@@ -37,7 +37,7 @@ public class TurneroView extends LinearLayout implements Observador
      *          - ganador: 1,2 si hubo un ganador. 3 si hubo empate. -1 si aun no hubo ganador
      *          - nombreJugadores: distinto de null, establecer nombre de jugadores. null, no hacer nada*/
     @Override
-    public void update(int puntJ1, int puntJ2, int puntEmp, int turno, int ganador, ArrayList<String> nombreJugadores)
+    public void update(int puntJ1, int puntJ2, int puntEmp, int turno, int ganador, ArrayList<String> nombreJugadores,int[][]matrizJuego)
     {
         /*si turno es -1, aun no inicio el juego. Se asignan nombres*/
         if(!(nombreJugadores == null) && turno == -1)

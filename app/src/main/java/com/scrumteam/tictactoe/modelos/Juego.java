@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Juego implements Sujeto
 {
-    int puntJ1,puntJ2,puntEmp,turno,ganador,numJugadas,lineaGanadora,tablero[][];
+    int puntJ1,puntJ2,puntEmp,turno,ganador,numJugadas,lineaGanadora,tablero[][],altTurno;
     ArrayList<String> nombreJugadores;
     ArrayList<Observador> observadores;         //Lista de suscriptores
     public Juego()
@@ -32,7 +32,7 @@ public class Juego implements Sujeto
     {
         for(Observador o : observadores)
         {
-            o.update(puntJ1,puntJ2,puntEmp,turno,ganador,nombreJugadores);
+            o.update(puntJ1,puntJ2,puntEmp,turno,ganador,nombreJugadores,tablero);
         }
     }
 
@@ -50,6 +50,7 @@ public class Juego implements Sujeto
         nombreJugadores = new ArrayList<>();
         nombreJugadores.add("Jugador 1");
         nombreJugadores.add("Jugador 2");
+        altTurno = 0;
 
         notificarObservadores();
     }
@@ -63,7 +64,8 @@ public class Juego implements Sujeto
 
     public void nuevaPartida()
     {
-        turno = 1;
+        altTurno = 1 + altTurno%2;
+        turno = altTurno;
         ganador = -1;
         numJugadas = 0;
         lineaGanadora = -1;

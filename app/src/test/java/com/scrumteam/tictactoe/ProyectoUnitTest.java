@@ -3,6 +3,7 @@ package com.scrumteam.tictactoe;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.scrumteam.tictactoe.hilos.AlgoritmoSistema;
 import com.scrumteam.tictactoe.modelos.Juego;
 
 import org.junit.Test;
@@ -366,5 +367,53 @@ public class ProyectoUnitTest
         juego.hacerJugada(3,3); //Octava jugada J2
 
         assertEquals(7,juego.getLineaGanadora());
+    }
+
+    @Test
+    public void encontrarJugadaGanadoraHorizontalTest()
+    {
+        int[][] matriz = {{2,0,2},
+                          {2,1,1},
+                          {1,0,1}};
+        AlgoritmoSistema a = new AlgoritmoSistema(null);
+        boolean si = a.encontrarJugadaGanadoraHorizontal(2,matriz);
+
+        assertTrue(si == true && a.getColumna() == 1 && a.getFila() == 0);
+    }
+
+    @Test
+    public void encontrarJugadaGanadoraVerticalTest()
+    {
+        int[][] matriz = {{2,0,2},
+                          {2,1,1},
+                          {0,0,1}};
+        AlgoritmoSistema a = new AlgoritmoSistema(null);
+        boolean si = a.encontrarJugadaGanadoraVertical(2,matriz);
+
+        assertTrue(si == true && a.getColumna() == 0 && a.getFila() == 2);
+    }
+
+    @Test
+    public void encontrarJugadaGanadoraDiagonalTest()
+    {
+        int[][] matriz = {{2,0,2},
+                          {2,0,1},
+                          {0,0,2}};
+        AlgoritmoSistema a = new AlgoritmoSistema(null);
+        boolean si = a.encontrarJugadaGanadoraDiagonal(2,matriz);
+
+        assertTrue(si == true && a.getColumna() == 1 && a.getFila() == 1);
+    }
+
+    @Test
+    public void encontrarJugadaGanadoraDiagonalInvTest()
+    {
+        int[][] matriz = {{2,0,2},
+                          {2,0,1},
+                          {2,0,2}};
+        AlgoritmoSistema a = new AlgoritmoSistema(null);
+        boolean si = a.encontrarJugadaGanadoraDiagonalInv(2,matriz);
+
+        assertTrue(si == true && a.getColumna() == 1 && a.getFila() == 1);
     }
 }
